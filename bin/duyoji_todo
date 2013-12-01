@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require 'duyoji_todo'
+
+DuyojiTodo::Command.run(ARGV)

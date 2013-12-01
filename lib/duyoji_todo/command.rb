@@ -6,7 +6,20 @@ module DuyojiTodo
 	# @author Tsuyoshi Maeda 
 	class Command
 
+		class << self
+			def run(argv)
+				new(argv).execute
+			end
+		end
+
+		def initialize(argv)
+			@argv = argv
+		end
+
 		def execute
+      options = Options.parse!(@argv)
+			puts options
+
 			DB.prepare
 		end
 
